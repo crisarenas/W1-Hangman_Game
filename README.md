@@ -1,5 +1,7 @@
 # Hangman Game
-
+The hangman game consists on trying to guess a secret word before our porr man dies. The PC will choose a random word from a list of words that can be modified changing the variable words.
+## List of Words
+It can be modified using the variable words.
 
 ## Creating a hangman
 The first thing that I tried when creating a hangman was doing it with a string. However, as seen in the picture below, it can be pretty frustrating when working with so many spaces.
@@ -27,6 +29,6 @@ So, to print the hangman, we will use:
  * ``` hangman[6]```: dead.
 
 ## Problems
-* Installinh ```pip install Random-Word-Generator``` to generate random words using a library.
+* Installing ```pip install random-word``` to generate random words using a library. Then ```from random_word import RandomWords```. And finally, create a list ```words = r.get_random_words()```
     * Error :  ``` No module named ...```
 
