@@ -1,21 +1,38 @@
+## Import hangman draw from another python file
 from hangman_draw import hangman
 import random
-# Hangman that will be shown when playing the game
-
 
 # List of possible words to guess
 words = ("python", "jumble", "easy", "difficult", "answer",  "xylophone")
+
 #Word that the PC will choose randomly from the list words. We will have to guess this one.
 choosen_word = random.choice(words)
 print(choosen_word)
 
-letter= input("Choose a letter: ")
-print(f"Choosen letter = {letter}")
-
-#check_letter = lambda x : print('Good job!') if (letter in choosen_word or letter in choosen_word.swapcase()) else print('Sorry, try again :(')
-
-if (letter in choosen_word or letter in choosen_word.swapcase()):
+# Functions that will be used
+count = 0
+def choose():
+    ''' User interation. Choose a letter and check if it is OK.'''
+    letter= input("Choose a letter: ")
+    if (letter in choosen_word or letter in choosen_word.swapcase()):
+        print('Good job!')
+        print(hangman[count])
+    else:
+        print('Sorry, try again :(')
+        count += 1
+        print(hangman[count])
+return count
+'''
+def letter_in_word():
     print('Good job!')
-else:
+    print(hangman[count])
+
+
+def letter_not_in_word():
     print('Sorry, try again :(')
-print(hangman[5])
+    count += 1
+    return count
+'''
+#while user_word != choosen_word:
+for i in range(4):
+    choose()
