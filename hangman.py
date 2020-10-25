@@ -11,7 +11,7 @@ print(choosen_word)
 
 # Functions that will be used
 count = 0
-def choose():
+def choose(count1):
     ''' User interation. Choose a letter and check if it is OK.'''
     letter= input("Choose a letter: ")
     if (letter in choosen_word or letter in choosen_word.swapcase()):
@@ -21,7 +21,7 @@ def choose():
         print('Sorry, try again :(')
         count += 1
         print(hangman[count])
-return count
+    return count
 '''
 def letter_in_word():
     print('Good job!')
@@ -35,4 +35,4 @@ def letter_not_in_word():
 '''
 #while user_word != choosen_word:
 for i in range(4):
-    choose()
+    choose(count)
