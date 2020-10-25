@@ -7,7 +7,6 @@ words = ("python", "jumble", "easy", "difficult", "answer",  "xylophone")
 
 #Word that the PC will choose randomly from the list words. We will have to guess this one.
 choosen_word = random.choice(words)
-print(choosen_word)
 
 # Genero un string de la forma _ _ _ _ que coincida con el numero de caracteres de la palabra
 current_word = []
@@ -26,11 +25,9 @@ def choose(count, already_said):
     if (letter in choosen_word or letter in choosen_word.swapcase()):
         print('Good job!')
         print(hangman[count])
-        coincidencia = []
-        for c in choosen_word:
-            if c == letter:
-                coincidencia.append(choosen_word.index(c))
-        
+        # Get a list of the indexes that contain the letter
+        coincidencia = [pos for pos, c in enumerate(choosen_word) if c == letter]  
+
         for index in coincidencia:
             current_word[index] = letter
         print(' '.join(current_word))
@@ -53,13 +50,13 @@ def get_letter():
       
 already_said =''
 count = 0
-# Mientras que no llegemos a mostrar el muñeco completp
-while count != 7:
-    if''.join(current_word) != choosen_word:
-        [count,already_said] = choose(count,already_said)
-    else:
-        print('You won!')
-    
+# Mientras que no llegemos a mostrar el muñeco completo y las palabras no coincidan
+while ((count != 6) and (''.join(current_word) != choosen_word)):
+    [count,already_said] = choose(count,already_said)
+    if (''.join(current_word) == choosen_word):
+        print('YOU WON!')
+    if count == 6:  
+        print("LOOSER!")
 
 
 
