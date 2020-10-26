@@ -8,7 +8,7 @@ words = ("python", "jumble", "easy", "difficult", "answer",  "xylophone")
 #Word that the PC will choose randomly from the list words. We will have to guess this one.
 choosen_word = random.choice(words)
 
-# Genero un string de la forma _ _ _ _ que coincida con el numero de caracteres de la palabra
+# Generates the string _ _ _ _ 
 current_word = []
 for _ in choosen_word:
     current_word.append("_")
@@ -27,7 +27,7 @@ def choose(count, already_said):
         print(hangman[count])
         # Get a list of the indexes that contain the letter
         coincidencia = [pos for pos, c in enumerate(choosen_word) if c == letter]  
-
+        # Iterates the list coincidencia, writing the letter in the right positions
         for index in coincidencia:
             current_word[index] = letter
         print(' '.join(current_word))
@@ -50,7 +50,7 @@ def get_letter():
       
 already_said =''
 count = 0
-# Mientras que no llegemos a mostrar el muñeco completo y las palabras no coincidan
+# While the hangman does not die and the words don't match
 while ((count != 6) and (''.join(current_word) != choosen_word)):
     [count,already_said] = choose(count,already_said)
     if (''.join(current_word) == choosen_word):

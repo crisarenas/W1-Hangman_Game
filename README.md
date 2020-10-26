@@ -8,7 +8,7 @@ The first thing that I tried when creating a hangman was doing it with a string.
 
 ![](hangman_nocomments.jpg)
 
-That's when I discovered that a comment can be assigned to a variable. This made everything much simplier.
+That's when I discovered that a **string of multiple lines** can be assigned to a variable. This made everything much simplier.
 
 ``` python
   hangman = ['''
@@ -28,7 +28,11 @@ So, to print the hangman, we will use:
  * ``` hangman[5]```: pole + head + torso + 2 arms + 1 leg.
  * ``` hangman[6]```: dead.
 
-## Problems
+## Improvements
+* Separating functions into diferrent files -> modularity.
+* Asking if we want to play again.
+
+## Problems 
 * Installing ```pip install random-word``` to generate random words using a library. Then ```from random_word import RandomWords```. And finally, create a list ```words = r.get_random_words()```
     * Error :  ``` No module named ...```
 
